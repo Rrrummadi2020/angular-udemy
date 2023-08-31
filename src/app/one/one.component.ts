@@ -4,7 +4,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app-one',
   templateUrl: './one.component.html',
   styleUrls: ['./one.component.css'],
-  encapsulation:ViewEncapsulation.Emulated
+  encapsulation:ViewEncapsulation.None
 })
 export class OneComponent {
 

@@ -4,7 +4,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app-two',
   templateUrl: './two.component.html',
   styleUrls: ['./two.component.css'],
-  encapsulation:ViewEncapsulation.Emulated//default value for the encapsulation
+  encapsulation:ViewEncapsulation.None//default value for the encapsulation
 })
 export class TwoComponent {
 
