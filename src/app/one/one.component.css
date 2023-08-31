@@ -1,0 +1,6 @@
+h3 {
+  color: black;
+  background-color: red;
+}
+/* now styles are overwritten which came from global */
+
