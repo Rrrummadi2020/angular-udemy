@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-two',
@@ -41,5 +41,18 @@ export class TwoComponent {
     if (this.subsc) {
       this.subsc.unsubscribe()
     }
+  }
+  createObservable() {
+    this.myObservable = new Observable<string>(observer => {
+      observer.next('observable emited data!!');
+    })
+    this.myObservable.subscribe(resp => {
+      console.log(resp);
+    })
+  }
+  createSubject() {
+    let subject = new Subject();
+    subject.next('Subject emitted Data!! by default subject never produced the data which was generated previously ');
+    subject.subscribe(res => console.log(res))
   }
 }
