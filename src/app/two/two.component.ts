@@ -54,5 +54,6 @@ export class TwoComponent {
     let subject = new Subject();
     subject.next('Subject emitted Data!! by default subject never produced the data which was generated previously ');
     subject.subscribe(res => console.log(res))
+    subject.next('Because this data will be available for the subscribe bcz after subscribe emitted')
   }
 }
