@@ -9,6 +9,7 @@ import { Observable, Subject, Subscription } from 'rxjs';
 })
 export class TwoComponent {
   myObservable: Observable<string> | undefined;
+  myObservableNumber: Observable<number> | undefined;
   myPromise: Promise<String> | undefined;
   subsc: any;
   counter: number | undefined;
@@ -43,17 +44,23 @@ export class TwoComponent {
     }
   }
   createObservable() {
-    this.myObservable = new Observable<string>(observer => {
-      observer.next('observable emited data!!');
+    //observable are multicasting
+    this.myObservableNumber = new Observable<number>(observer => {
+      observer.next(Math.random());
     })
-    this.myObservable.subscribe(resp => {
-      console.log(resp);
+    this.myObservableNumber.subscribe(resp => {
+      console.log(resp);//different data
+    })
+    this.myObservableNumber.subscribe(resp => {
+      console.log(resp);//different data
     })
   }
   createSubject() {
+    //subjects are not multi casting
     let subject = new Subject();
     subject.next('Subject emitted Data!! by default subject never produced the data which was generated previously ');
-    subject.subscribe(res => console.log(res))
-    subject.next('Because this data will be available for the subscribe bcz after subscribe emitted')
+    subject.subscribe(res => console.log(res));//same  data
+    subject.subscribe(res => console.log(res));//same data
+    subject.next(Math.random());
   }
 }
