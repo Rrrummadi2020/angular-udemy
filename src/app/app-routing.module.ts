@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'product',
     loadChildren: () => import('./productm/productm.module').then(m => m.ProductModule)
   },
-  { path: '**', redirectTo: '/home' }
+  // { path: '**', redirectTo: '/home' }// to see the error if we use relative path
 ];
 
 @NgModule({
