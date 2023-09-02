@@ -14,6 +14,7 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck {
   counter: number = 0;
   ngOnInit(): void {
     console.log('child ngOn Init called ');
+    console.log(this.parentValue+" PARENT VALUE HERE GOT INITIALIZED");//value wil be available
     this.interval=setInterval(() => {
       console.log('timer onned ' + this.counter++);
     }, 1000)
@@ -22,6 +23,8 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck {
     console.log('child constructor called ');
     console.log(this.cont+' projected content')
     console.log(this.child+' child content constructor');
+    console.log(this.parentValue + "PARENT VALUE HERE NOT INITIALIZED");// value will not be availble diff
+
   }
   ngOnDestroy(): void {
     console.log('child ng on destroy  called ');
