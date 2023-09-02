@@ -9,15 +9,17 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck {
 
   @Input() parentValue: string | undefined;
   interval: any;
+  @Input() birds:any[]=[];
+
   @ContentChild('projectedContent',{static:true}) cont: any;
   @ViewChild('childTemplateVari',{static:true}) child:any;//default static is false
   counter: number = 0;
   ngOnInit(): void {
     console.log('child ngOn Init called ');
     console.log(this.parentValue+" PARENT VALUE HERE GOT INITIALIZED");//value wil be available
-    this.interval=setInterval(() => {
-      console.log('timer onned ' + this.counter++);
-    }, 1000)
+    // this.interval=setInterval(() => {
+    //   console.log('timer onned ' + this.counter++);
+    // }, 1000)
   }
   constructor() {
     console.log('child constructor called ');
