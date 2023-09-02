@@ -11,7 +11,16 @@
 <button class="btn btn-primary" (click)="onAdd()">Add Bird</button>
 
 
-
+<select name="subscription" id="subscription" [(ngModel)]="isSubscribed">
+  <option [value]="true">Yes</option>
+  <option [value]="false">No</option>
+</select>
+<div *ngIf="isSubscribed">
+  <h4>You selected Flyable birds</h4>
+</div>
+<div *ngIf="!isSubscribed">
+  <h4>You selected Non-Flyable birds</h4>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-xs-6">

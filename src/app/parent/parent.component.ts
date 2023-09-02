@@ -12,7 +12,7 @@ export class ParentComponent implements OnInit {
   birds: Birds[] = [];
   name: string | undefined;
   flyable: boolean | undefined;
-
+isSubscribed:string|undefined;
   ngOnInit(): void {
     this.isPresent = false;
     this.birds = [
