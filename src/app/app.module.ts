@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
+import { BirdsFilterPipe } from './pipesc/birds.filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TwoComponent } from './two/two.component';
     ContactComponent,
     HeaderComponent,
     OneComponent,
-    TwoComponent
+    TwoComponent,
+    BirdsFilterPipe
   ],
   imports: [
     BrowserModule,

@@ -4,3 +4,27 @@
 <app-child [parentValue]="originalValue" *ngIf="isPresent">
   <p #projectedContent>this is the content projected from the parent component</p>
 </app-child>
+<br> =================<br>
+<label for="isFlyable">is Flyable</label>
+<input type="checkbox" id="isFlyable" [(ngModel)]="flyable">
+<input type="text" [(ngModel)]="name" placeholder="Enter Name of the bird">
+<button class="btn btn-primary" (click)="onAdd()">Add Bird</button>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-xs-6">
+     <h1> all birds list</h1>
+      <div *ngFor="let bird of birds">
+        {{bird.name}}-{{bird.flyable}}
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-6">
+      <h1> Flyable birds list</h1>
+      <div *ngFor="let bird of birds|birdsFlyable">
+        {{bird.name}}-{{bird.flyable}}
+      </div>
+    </div>
+  </div>
+</div>
