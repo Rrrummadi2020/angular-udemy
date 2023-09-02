@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-two',
@@ -62,5 +62,39 @@ export class TwoComponent {
     subject.subscribe(res => console.log(res));//same  data
     subject.subscribe(res => console.log(res));//same data
     subject.next(Math.random());
+  }
+  createReplaySubject() {
+    //let replaySubj = new ReplaySubject();//store all the emiited data from subject creation
+    let replaySubj = new ReplaySubject(2);// will emitt the last two emitted data remaining it wil not store in its memory
+    replaySubj.next(10);
+    replaySubj.next(20);
+    replaySubj.next(30);
+    replaySubj.next(40);
+    replaySubj.next(50);
+    replaySubj.subscribe((resp) => {
+      console.log(resp);
+    })
+    setInterval(() => {
+      console.log('emitting the data in the intervals');
+      replaySubj.next(11);
+    }, 1000)
+  }
+
+  createBehaviourSubject() {
+    let replaySubj = new BehaviorSubject(1234);//store exact& mandatory one value , if no emitted data previously then this default  value will be emitted ,if already emitted this defaul value will get override by the previouslt emitted value
+    //toggle the below comments lines to show the difference
+    // replaySubj.next(10);
+    // replaySubj.next(20);
+    // replaySubj.next(30);
+    // replaySubj.next(40);
+    // replaySubj.next(50);
+    // replaySubj.next(50);
+    replaySubj.subscribe((resp) => {
+      console.log(resp);
+    })
+    setInterval(() => {
+      console.log('emitting the data in the intervals');
+      replaySubj.next(11);
+    }, 1000)
   }
 }
