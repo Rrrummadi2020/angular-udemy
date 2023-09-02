@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { ProductComponent } from './product/product.component';
 import { HeaderComponent } from './header/header.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
@@ -24,7 +23,6 @@ import { TwoComponent } from './two/two.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ProductComponent,
     HeaderComponent,
     OneComponent,
     TwoComponent
@@ -37,5 +35,5 @@ import { TwoComponent } from './two/two.component';
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, multi: true, useClass: UriupdateInterceptor }],
   bootstrap: [AppComponent]
-})
+})//for all the component one instance i.e., singleton instance throught the app
 export class AppModule { }
