@@ -16,12 +16,12 @@
   <option [ngValue]="false">No</option>
 </select>
 
-<div *ngIf="flyable">
+<div *ngIf="flyable;else elseBlock">
   <h4>You selected Flyable birds</h4>
 </div>
-<div *ngIf="!flyable">
+<ng-template #elseBlock>
   <h4>You selected Non-Flyable birds</h4>
-</div>
+</ng-template>
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-xs-6">
