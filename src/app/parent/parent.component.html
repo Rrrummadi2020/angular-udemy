@@ -40,3 +40,13 @@
     </div>
   </div>
 </div>
+<input type="number" [(ngModel)]="luckyNumber">
+<!-- https://youtu.be/9aI7ym6MoBE?si=Qp_cMAaDrivtddzr -->
+<div [ngSwitch]="luckyNumber">
+  <ul *ngSwitchCase="1">strong</ul>
+  <ul *ngSwitchCase="2">average</ul>
+  <ul *ngSwitchCase="3">better</ul>
+  <ul *ngSwitchCase="4">good</ul>
+  <ul *ngSwitchCase="5">weak</ul>
+  <ul *ngSwitchDefault>Please select the number from 1 to 5 </ul>
+</div>
