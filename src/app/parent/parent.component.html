@@ -15,10 +15,11 @@
   <option [ngValue]="true">Yes</option>
   <option [ngValue]="false">No</option>
 </select>
-<div *ngIf="isSubscribed">
+
+<div *ngIf="flyable">
   <h4>You selected Flyable birds</h4>
 </div>
-<div *ngIf="!isSubscribed">
+<div *ngIf="!flyable">
   <h4>You selected Non-Flyable birds</h4>
 </div>
 <div class="container">
