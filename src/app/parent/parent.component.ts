@@ -14,6 +14,7 @@ export class ParentComponent implements OnInit {
   flyable: boolean | undefined;
   luckyNumber:number|undefined;
 isSubscribed:string|undefined;
+  isStyleApplied: boolean | undefined;
   ngOnInit(): void {
     this.isPresent = false;
     this.birds = [
@@ -28,6 +29,9 @@ isSubscribed:string|undefined;
   }
   onAdd() {
     this.birds.push({ name: this.name, flyable: this.flyable })
+  }
+  toggleStyle() {
+    this.isStyleApplied = !this.isStyleApplied;
   }
 
 }

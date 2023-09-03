@@ -50,3 +50,7 @@
   <ul *ngSwitchCase="5">weak</ul>
   <ul *ngSwitchDefault>Please select the number from 1 to 5 </ul>
 </div>
+<div >
+  <h1 [ngStyle]="{'background-color':isStyleApplied===true?'red':'yellow'}">ngStyle will take js object as an argument </h1>
+  <button class="btn btn-primary" (click)="toggleStyle()">Toggle Style</button>
+</div>
