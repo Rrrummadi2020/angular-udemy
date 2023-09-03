@@ -1,7 +1,7 @@
 <h1>parent works!</h1>
 <button (click)="onStateChange()">Toggle visibility</button>
 <input type="text" [(ngModel)]="originalValue">
-<app-child [parentValue]="originalValue" *ngIf="isPresent" [birds]="birds">
+<app-child [parentValue]="originalValue" *ngIf="isPresent" [birds]="birds" (sendData)="receivedDate($event)">
   <p #projectedContent>this is the content projected from the parent component</p>
 </app-child>
 <br> =================<br>

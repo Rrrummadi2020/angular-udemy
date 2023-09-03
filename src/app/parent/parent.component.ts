@@ -37,4 +37,8 @@ isSubscribed:string|undefined;
   changeColor(color: string) {
     this.styleColor = color;
   }
+  receivedDate(data:string){
+    console.log('IN PARENT DATA')
+    console.log(data);
+  }
 }

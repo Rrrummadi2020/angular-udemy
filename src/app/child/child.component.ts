@@ -1,4 +1,4 @@
-import { Component, ContentChild, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, ContentChild, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -10,6 +10,7 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck {
   @Input() parentValue: string | undefined;
   interval: any;
   @Input() birds:any[]=[];
+  @Output() sendData:EventEmitter<string>=new EventEmitter<string>();
 
   @ContentChild('projectedContent',{static:true}) cont: any;
   @ViewChild('childTemplateVari',{static:true}) child:any;//default static is false
@@ -55,5 +56,9 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck {
   ngDoCheck(): void {
     console.log('ng Do check is called');
     console.log(this.cont+' projected content')
+  }
+  sendDataToParent(val: Event) {
+    this.sendData?.emit((<HTMLInputElement>val.target).value);
+    console.log('CHILD DATA'+(<HTMLInputElement>val.target).value);
   }
 }
