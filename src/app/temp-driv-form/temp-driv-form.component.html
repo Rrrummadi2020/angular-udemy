@@ -1,16 +1,23 @@
 <h3>Template Driven Forms</h3>
-<form>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
   <div class="form-group">
     <label for="userName">User Name</label>
-    <input type="text" class="form-control" placeholder="Enter Username">
+    <input type="text" name="userName" ngModel required #userName="ngModel" class="form-control"
+      placeholder="Enter Username">
+    <span class="danger" *ngIf="!userName.valid&&userName.touched">Enter the username</span>
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" placeholder="Enter email">
+    <input type="email" required name="email" email ngModel #email="ngModel" class="form-control"
+      placeholder="Enter email">
+    <span class="danger" *ngIf="!email.valid&&email.touched&&email.errors&&email.errors['required']">Enter the
+      Email</span>
+    <span class="danger" *ngIf="!email.valid&&email.touched&&email.errors&&email.errors['email']">Enter the valid
+      Email</span>
   </div>
   <div class="form-group">
     <label for="subscribe">Subscribe</label>
-    <input type="checkbox" class="form-control">
+    <input type="checkbox" name="subscribe" ngModel #subscribe="ngModel" class="form-control">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
 </form>

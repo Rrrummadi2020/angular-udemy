@@ -6,6 +6,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'parent', component: ParentComponent },
   { path: 'one', component: OneComponent },
   { path: 'two', component: TwoComponent },
+  { path: 'template-forms', component: TempDrivFormComponent },
+  { path: 'reactive-forms', component: ReactiveFormsComponent },
   {
     path: 'product',
     loadChildren: () => import('./productm/productm.module').then(m => m.ProductModule)
