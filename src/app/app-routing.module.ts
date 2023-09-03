@@ -1,14 +1,20 @@
+import { ParentComponent } from './parent/parent.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { OneComponent } from './one/one.component';
+import { TwoComponent } from './two/two.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'parent', component: ParentComponent },
+  { path: 'one', component: OneComponent },
+  { path: 'two', component: TwoComponent },
   {
     path: 'product',
     loadChildren: () => import('./productm/productm.module').then(m => m.ProductModule)
