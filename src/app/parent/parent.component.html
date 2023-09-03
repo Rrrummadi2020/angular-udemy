@@ -16,9 +16,11 @@
   <option [ngValue]="false">No</option>
 </select>
 
-<div *ngIf="flyable;else elseBlock">
-  <h4>You selected Flyable birds</h4>
+<div *ngIf="flyable;then thenBlock else elseBlock">
 </div>
+<ng-template #thenBlock>
+  <h4>You selected Flyable birds</h4>
+</ng-template>
 <ng-template #elseBlock>
   <h4>You selected Non-Flyable birds</h4>
 </ng-template>
