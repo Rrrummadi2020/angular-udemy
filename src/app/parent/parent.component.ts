@@ -15,6 +15,7 @@ export class ParentComponent implements OnInit {
   luckyNumber:number|undefined;
 isSubscribed:string|undefined;
   isStyleApplied: boolean | undefined;
+  styleColor:string|undefined;
   ngOnInit(): void {
     this.isPresent = false;
     this.birds = [
@@ -33,5 +34,7 @@ isSubscribed:string|undefined;
   toggleStyle() {
     this.isStyleApplied = !this.isStyleApplied;
   }
-
+  changeColor(color: string) {
+    this.styleColor = color;
+  }
 }

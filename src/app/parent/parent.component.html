@@ -51,6 +51,12 @@
   <ul *ngSwitchDefault>Please select the number from 1 to 5 </ul>
 </div>
 <div >
-  <h1 [ngStyle]="{'background-color':isStyleApplied===true?'red':'yellow'}">ngStyle will take js object as an argument </h1>
+  <h3 [ngStyle]="{'background-color':isStyleApplied===true?'red':'yellow'}">ngStyle will take js object as an argument </h3>
   <button class="btn btn-primary" (click)="toggleStyle()">Toggle Style</button>
 </div>
+<button class="btn btn-primary" (click)="changeColor('green')">Green</button>
+<button class="btn btn-primary" (click)="changeColor('red')">Red</button>
+<button class="btn btn-primary" (click)="changeColor('black')">Black</button>
+<h3 [ngClass]="{
+  'red':styleColor=='red','green':styleColor=='green','black':styleColor=='black'
+}">This is the designed obtained by taking the instructions from ngClass</h3>
