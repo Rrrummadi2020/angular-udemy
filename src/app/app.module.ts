@@ -15,6 +15,8 @@ import { HeaderComponent } from './header/header.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
 import { BirdsFilterPipe } from './pipesc/birds.filter.pipe';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { BirdsFilterPipe } from './pipesc/birds.filter.pipe';
     HeaderComponent,
     OneComponent,
     TwoComponent,
-    BirdsFilterPipe
+    BirdsFilterPipe,
+    ReactiveFormsComponent,
+    TempDrivFormComponent
   ],
   imports: [
     BrowserModule,
