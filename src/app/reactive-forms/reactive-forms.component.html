@@ -1,16 +1,24 @@
 <h3>Reactive Forms</h3>
-<form>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="userName">User Name</label>
-    <input type="text" class="form-control" placeholder="Enter Username">
+    <input type="text" class="form-control" formControlName="userName" placeholder="Enter Username">
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" placeholder="Enter email">
+    <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+    <span class="danger"
+      *ngIf="!myForm.get('email')?.valid&&myForm.get('email')?.touched&&myForm.get('email')?.errors&&myForm.get('email')?.errors">Enter
+      the
+      Email</span>
+    <span class="danger"
+      *ngIf="!myForm.get('email')?.valid&&myForm.get('email')?.touched&&myForm.get('email')?.errors&&myForm.get('email')?.errors">Enter
+      the valid
+      Email</span>
   </div>
   <div class="form-group">
     <label for="subscribe">Subscribe</label>
-    <input type="checkbox" class="form-control">
+    <input type="checkbox" formControlName="subscribe" class="form-control">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
