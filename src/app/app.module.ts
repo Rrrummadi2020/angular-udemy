@@ -18,6 +18,7 @@ import { BirdsFilterPipe } from './pipesc/birds.filter.pipe';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component';
 import { HighLightDirective } from './high-light.directive';
+import { ChildRouteComponent } from './child-route/child-route.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HighLightDirective } from './high-light.directive';
     BirdsFilterPipe,
     ReactiveFormsComponent,
     TempDrivFormComponent,
-    HighLightDirective
+    HighLightDirective,
+    ChildRouteComponent
   ],
   imports: [
     BrowserModule,

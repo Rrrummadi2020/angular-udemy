@@ -8,11 +8,17 @@ import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component';
+import { ChildRouteComponent } from './child-route/child-route.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
+  {
+    path: 'about', component: AboutComponent, canActivate: [authGuard], children: [{
+      path: 'child-route', component: ChildRouteComponent
+    }]
+  },
   { path: 'contact', component: ContactComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'one', component: OneComponent },
