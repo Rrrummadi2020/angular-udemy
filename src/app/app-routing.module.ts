@@ -10,6 +10,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component';
 import { ChildRouteComponent } from './child-route/child-route.component';
 import { authGuard } from './auth.guard';
+import { loadModuleGuard } from './load-module.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'template-forms', component: TempDrivFormComponent },
   { path: 'reactive-forms', component: ReactiveFormsComponent },
   {
-    path: 'product',
+    path: 'product', canLoad: [loadModuleGuard],
     loadChildren: () => import('./productm/productm.module').then(m => m.ProductModule)
   },
   // { path: '**', redirectTo: '/home' }// to see the error if we use relative path
