@@ -11,6 +11,7 @@ import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component
 import { ChildRouteComponent } from './child-route/child-route.component';
 import { authGuard } from './auth.guard';
 import { loadModuleGuard } from './load-module.guard';
+import { deactivateAuthGuard } from './deactivate-auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,7 +23,7 @@ const routes: Routes = [
   },
   { path: 'contact', component: ContactComponent },
   { path: 'parent', component: ParentComponent },
-  { path: 'one', component: OneComponent },
+  { path: 'one', component: OneComponent ,canDeactivate:[deactivateAuthGuard]},
   { path: 'two', component: TwoComponent },
   { path: 'template-forms', component: TempDrivFormComponent },
   { path: 'reactive-forms', component: ReactiveFormsComponent },
