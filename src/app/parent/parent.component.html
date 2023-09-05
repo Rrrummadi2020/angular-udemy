@@ -9,8 +9,7 @@
 <input type="checkbox" id="isFlyable" [(ngModel)]="flyable">
 <input type="text" [(ngModel)]="name" placeholder="Enter Name of the bird">
 <button class="btn btn-primary" (click)="onAdd()">Add Bird</button>
-
-
+<p appHighLight>I will get new color when mouseenter and mouseleave</p>
 <select name="subscription" id="subscription" [(ngModel)]="isSubscribed">
   <option [ngValue]="true">Yes</option>
   <option [ngValue]="false">No</option>

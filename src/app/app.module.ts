@@ -17,6 +17,7 @@ import { TwoComponent } from './two/two.component';
 import { BirdsFilterPipe } from './pipesc/birds.filter.pipe';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component';
+import { HighLightDirective } from './high-light.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component
     TwoComponent,
     BirdsFilterPipe,
     ReactiveFormsComponent,
-    TempDrivFormComponent
+    TempDrivFormComponent,
+    HighLightDirective
   ],
   imports: [
     BrowserModule,
