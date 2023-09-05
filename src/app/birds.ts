@@ -1,4 +1,5 @@
 export interface Birds {
   name?: string,
-  flyable?: boolean
+  flyable?: boolean,
+  id?:number
 }

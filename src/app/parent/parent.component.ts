@@ -19,9 +19,9 @@ isSubscribed:string|undefined;
   ngOnInit(): void {
     this.isPresent = false;
     this.birds = [
-      { name: 'peacock', flyable: true },
-      { name: 'parrot', flyable: false },
-      { name: 'crow', flyable: true }
+      { name: 'peacock', flyable: true,id:1},
+      { name: 'parrot', flyable: false,id:2 },
+      { name: 'crow', flyable: true ,id:3}
     ]
     this.flyable = true
   }
@@ -40,5 +40,13 @@ isSubscribed:string|undefined;
   receivedDate(data:string){
     console.log('IN PARENT DATA')
     console.log(data);
+  }
+  onRefresh(){
+    this.birds = [{ name: 'peacock', flyable: true, id: 1 },
+    { name: 'kamal', flyable: false, id: 2 },
+    { name: 'crow', flyable: true, id: 3 }]
+  }
+  trackById(index:number,item:Birds){
+    return item.id;
   }
 }

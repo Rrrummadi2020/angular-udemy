@@ -59,3 +59,11 @@
 <h3 [ngClass]="{
   'red':styleColor=='red','green':styleColor=='green','black':styleColor=='black'
 }">This is the designed obtained by taking the instructions from ngClass</h3>
+
+refresh
+<button class="btn btn-primary" (click)="onRefresh()">Refresh</button>
+<ul>
+  <li *ngFor="let bird of birds;trackBy:trackById">
+    {{bird.name}}
+  </li>
+</ul>
