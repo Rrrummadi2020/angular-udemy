@@ -19,6 +19,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component';
 import { HighLightDirective } from './high-light.directive';
 import { ChildRouteComponent } from './child-route/child-route.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -42,9 +44,11 @@ import { ChildRouteComponent } from './child-route/child-route.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, multi: true, useClass: UriupdateInterceptor }],
   bootstrap: [AppComponent]
 })//for all the component one instance i.e., singleton instance throught the app
-export class AppModule { }
+  export class AppModule { }
