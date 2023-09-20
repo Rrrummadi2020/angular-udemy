@@ -5,5 +5,7 @@
 <ng-content></ng-content>
 <p #childTemplateVari>child Ends!</p>
 <input type="text" (input)="sendDataToParent($event)">
+<h4>Medium content</h4>
+<ng-content select=".parentView"></ng-content>
 
 
