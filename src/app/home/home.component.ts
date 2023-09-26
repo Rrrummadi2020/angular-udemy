@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { DataService } from '../data.service';
@@ -9,6 +10,7 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent {
   counter: number | undefined;
+  numbers?:Observable<number[]> ;
   constructor(private router: Router,private dataService: DataService) {
     this.isDisable = false;
   }
@@ -18,6 +20,7 @@ export class HomeComponent {
   }
   ngOnInit(){
     this.counter = this.dataService.couter;
+    this.numbers = this.dataService.getNumbers();
   }
   inc() {
     this.counter = this.dataService.increment()
