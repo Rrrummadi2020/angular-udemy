@@ -21,6 +21,7 @@ import { HighLightDirective } from './high-light.directive';
 import { ChildRouteComponent } from './child-route/child-route.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule} from '@angular/material/button';
+import { ChildChildComponent } from './child-child/child-child.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatButtonModule} from '@angular/material/button';
     ReactiveFormsComponent,
     TempDrivFormComponent,
     HighLightDirective,
-    ChildRouteComponent
+    ChildRouteComponent,
+    ChildChildComponent
   ],
   imports: [
     BrowserModule,
