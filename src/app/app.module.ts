@@ -20,8 +20,14 @@ import { TempDrivFormComponent } from './temp-driv-form/temp-driv-form.component
 import { HighLightDirective } from './high-light.directive';
 import { ChildRouteComponent } from './child-route/child-route.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { ChildChildComponent } from './child-child/child-child.component';
+import { LoginComponent } from './login/login.component';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AnimationPComponent } from './animation-p/animation-p.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,9 @@ import { ChildChildComponent } from './child-child/child-child.component';
     TempDrivFormComponent,
     HighLightDirective,
     ChildRouteComponent,
-    ChildChildComponent
+    ChildChildComponent,
+    LoginComponent,
+    AnimationPComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,9 +56,14 @@ import { ChildChildComponent } from './child-child/child-child.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, multi: true, useClass: UriupdateInterceptor }],
-  bootstrap: [AppComponent]
-})//for all the component one instance i.e., singleton instance throught the app
-  export class AppModule { }
+  providers: [
+    { provide: HTTP_INTERCEPTORS, multi: true, useClass: UriupdateInterceptor },
+  ],
+  bootstrap: [AppComponent],
+}) //for all the component one instance i.e., singleton instance throught the app
+export class AppModule {}
