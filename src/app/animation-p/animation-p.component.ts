@@ -145,4 +145,11 @@ export class AnimationPComponent {
       1
     );
   }
+
+  onAnimationStarted(data: any) {
+    console.log(data);
+  }
+  onAnimationDone(data: any) {
+    console.log(data);
+  }
 }
