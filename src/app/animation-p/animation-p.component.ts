@@ -51,7 +51,15 @@ import { Component } from '@angular/core';
       // transition('normal=>highlighted', animate(300)),
       // transition('highlighted=>normal', animate(600)),
       transition('highlighted<=>normal', animate(600)),
-      transition('shrunken <=> *', animate(600)),
+      transition(
+        'shrunken <=> *',
+        // animate(600, style({ 'border-radius': '50px' })),
+        [
+          style({ 'background-color': 'green' }),
+          animate(1000, style({ 'border-radius': '50px' })),
+          animate(1200),
+        ]
+      ),
     ]),
   ],
 })
