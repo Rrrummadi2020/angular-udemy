@@ -61,6 +61,24 @@ import { Component } from '@angular/core';
         ]
       ),
     ]),
+
+    trigger('list1', [
+      state(
+        'in',
+        style({
+          opacity: 1,
+          transform: 'translateX(0px)',
+        })
+      ),
+      transition('void => *', [
+        style({ opacity: '0', transform: 'translateX(-100px)' }),
+        animate(600),
+      ]),
+      transition('* => void', [
+        animate(600),
+        style({ opacity: '0', transform: 'translateX(100px)' }),
+      ]),
+    ]),
   ],
 })
 export class AnimationPComponent {
@@ -79,5 +97,10 @@ export class AnimationPComponent {
   onShrink() {
     this.wild = 'shrunken';
   }
-  onDelete(item: string) {}
+  onDelete(item: string) {
+    this.list.splice(
+      this.list.findIndex((e) => e == item),
+      1
+    );
+  }
 }
