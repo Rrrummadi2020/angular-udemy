@@ -28,6 +28,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AnimationPComponent } from './animation-p/animation-p.component';
+import { StoreModule } from '@ngrx/store';
+import { couterReducer } from './store/counter.reducer';
+import { CounterControlsComponent } from './counter-controls/counter-controls.component';
+import { CounterOutputComponent } from './counter-output/counter-output.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +52,8 @@ import { AnimationPComponent } from './animation-p/animation-p.component';
     ChildChildComponent,
     LoginComponent,
     AnimationPComponent,
+    CounterControlsComponent,
+    CounterOutputComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +66,7 @@ import { AnimationPComponent } from './animation-p/animation-p.component';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
+    StoreModule.forRoot({ counter: couterReducer }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, multi: true, useClass: UriupdateInterceptor },
