@@ -32,6 +32,8 @@ import { StoreModule } from '@ngrx/store';
 import { couterReducer } from './store/counter.reducer';
 import { CounterControlsComponent } from './counter-controls/counter-controls.component';
 import { CounterOutputComponent } from './counter-output/counter-output.component';
+import { EffectsModule } from '@ngrx/effects';
+import { CounterEffects } from './store/counter.effects';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,7 @@ import { CounterOutputComponent } from './counter-output/counter-output.componen
     MatInputModule,
     MatFormFieldModule,
     StoreModule.forRoot({ counter: couterReducer }),
+    EffectsModule.forRoot([CounterEffects]),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, multi: true, useClass: UriupdateInterceptor },
