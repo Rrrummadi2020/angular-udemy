@@ -14,6 +14,8 @@ export function couterReducer(counterState = initialState, action: any) {
     return counterState + 3;
   } else if (action.type === '[Counter] Decrement') {
     return counterState - 1;
+  } else if (action.type === '[Counter] set') {
+    return action.value;
   }
   return counterState;
 }
